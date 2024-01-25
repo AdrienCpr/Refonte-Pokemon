@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Projet Pokémons</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="https://www.hebergeur-image.com/upload/86.221.48.88-6470a393c2b63.png"/>
+
+
+    <!--    Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!--    Socket IO-->
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+
+    <!-- Tabulator -->
+    <link href="https://unpkg.com/tabulator-tables/dist/css/tabulator.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://unpkg.com/tabulator-tables/dist/js/tabulator.min.js"></script>
+    <!--    <link href="/dist/css/tabulator_bootstrap5.min.css" rel="stylesheet">-->
+
+    <!--    Date-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.3.0/luxon.min.js"></script>
+
+    <!--    Font awesome-->
+    <script src="https://kit.fontawesome.com/43cf63b701.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="res/css/index.css"/>
+</head>
+<body>
+
+    <nav  class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand display-2"><img src="res/img/pkb.png" alt="Logo" width="auto" height="30"></a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul id="nav-pages" class="navbar-nav mr-auto mt-2 mt-lg-0">
+            </ul>
+        </div>
+        <ul id="nav-connexion" style="display: flex">
+        </ul>
+        <ul id="nav-deconnexion" style="display: flex">
+        </ul>
+    </nav>
+
+    <div id="content"></div>
+
+    <script type="application/ecmascript" src="app/tools.js"></script>
+    <script>navigate("login")</script>
+</body>
+</html>

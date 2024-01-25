@@ -1,0 +1,76 @@
+<div class="col d-flex justify-content-center mt-5">
+    <div class="card" style ="background-color: #f5f5f5; width: 600px">
+        <div class="card-body">
+            <div class="row fontInput">
+                <div id="updated"></div>
+                <div class="form-group inputLogin">
+                    <span id="icon-gamepad">
+                            <i class="fa-solid fa-gamepad"></i>
+                    </span>
+                    <label for="pseudo">Pseudo</label>
+                    <input type="text" class="form-control" id="pseudo" placeholder="Modifier votre pseudo" onblur="updateUserController.focusOff('icon-gamepad','icon-gamepad')" onfocus="updateUserController.focusOn('icon-gamepad','icon-gamepad')">
+                    <div id="valid-pseudo"></div>
+                </div>
+                <div class="form-group inputLogin mt-3">
+                    <span id="icon-user">
+                            <i class="fa-solid fa-user"></i>
+                    </span>
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Modifier votre e-mail" onblur="updateUserController.focusOff('icon-user','icon-user')" onfocus="updateUserController.focusOn('icon-user','icon-user')">
+                    <div id="valid-email"></div>
+                </div>
+                <div class="form-group inputLogin mt-3">
+                    <span id="icon-key-1">
+                            <i class="fa-solid fa-key"></i>
+                    </span>
+                    <label for="password">Mot de passe</label>
+
+                    <div class="input-group">
+                        <input type="password" class="form-control" id="password" placeholder="Modifier votre mot de passe" onblur="updateUserController.focusOff('icon-key-1', 'icon-key')" onfocus="updateUserController.focusOn('icon-key-1', 'icon-key')">
+                        <button class="btn btn-outline-secondary" type="button" onclick="loginController.togglePasswordVisibility('password', 'toggleIcon1')">
+                            <i id="toggleIcon1" class="fa-regular fa-eye-slash" style="color: #2c2d30;"></i>
+                        </button>
+                    </div>
+
+                    <div id="valid-password"></div>
+                </div>
+                <div class="form-group inputLogin mt-3">
+                    <span id="icon-key-2">
+                            <i class="fa-solid fa-key"></i>
+                    </span>
+                    <label for="password">Confirmation du mot de passe</label>
+
+                    <div class="input-group">
+                        <input type="password" class="form-control" id="confirm_password" placeholder="Entrer une confirmation du mot de passe" onblur="updateUserController.focusOff('icon-key-2', 'icon-key')" onfocus="updateUserController.focusOn('icon-key-2', 'icon-key')">
+                        <button class="btn btn-outline-secondary" type="button" onclick="loginController.togglePasswordVisibility('confirm_password', 'toggleIcon2')">
+                            <i id="toggleIcon2" class="fa-regular fa-eye-slash" style="color: #2c2d30;"></i>
+                        </button>
+                    </div>
+
+                    <div id="valid-confirm-password"></div>
+                </div>
+
+                <div class="form-group inputLogin mt-3">
+                    <span id="icon-key-3">
+                            <i class="fa-solid fa-key"></i>
+                    </span>
+                    <label for="current-password">Mot de passe actuel</label>
+
+                    <div class="input-group">
+                        <input type="password" class="form-control" id="current-password" placeholder="Permet de confirmer les changements" onblur="updateUserController.focusOff('icon-key-3', 'icon-key')" onfocus="updateUserController.focusOn('icon-key-3', 'icon-key')">
+                        <button class="btn btn-outline-secondary" type="button" onclick="loginController.togglePasswordVisibility('current-password', 'toggleIcon3')">
+                            <i id="toggleIcon3" class="fa-regular fa-eye-slash" style="color: #2c2d30;"></i>
+                        </button>
+                    </div>
+
+                    <div id="valid-current-password"></div>
+                </div>
+
+                <div class="col d-flex justify-content-center">
+                    <button onclick="updateUserController.updateUser()" style="margin-top: 10px" class="btn btn-primary">Modifier mes informations</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

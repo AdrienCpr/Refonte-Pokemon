@@ -1,0 +1,94 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="pokemon-name"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <div id="pokemon-picture" style="text-align: center "></div>
+                <div id="stats"></div>
+            </div>
+            <div class="modal-footer">
+                <a type="button" class="btn btn-danger" data-bs-dismiss="modal">Non</a>
+                <span id="buy"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<span id="insufficient-coins"></span>
+
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <form>
+                <div class="form-group">
+                    <input style="border-radius: 25px;" type="text" class="form-control" id="searchBar" onkeyup="shopController.search()" placeholder="Rechercher un nom, un type ...">
+                </div>
+                <div class="mt-2 bg-warning text-dark rounded border border-white pointer " id="filter-price" onclick="shopController.filterPerPrice()" style="cursor: pointer; display: inline-block;">&nbsp; Filtrer par prix &nbsp;</div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div style="padding-top: 10em" class="container" id="shop-cards">
+</div>
+
+<script id="card-template" type="text/x-handlebars-template">
+    <figure class="card card--{{type}}">
+        <div class="card__image-container">
+            <img src="{{imageAddress}}" alt="{{name}}" class="card__image">
+        </div>
+
+        <figcaption class="card__caption">
+            <h1 class="card__name">{{name}}</h1>
+
+            <h3 class="card__type">e
+                {{type}}
+            </h3>
+
+            <table class="card__stats">
+                <tr>
+                    <th>HP</th>
+                    <td>{{hp}}</td>
+                </tr>
+                <tr>
+                    <th>Attack</th>
+                    <td>{{attack}}</td>
+                </tr>
+
+                <tr>
+                    <th>Defense</th>
+                    <td>{{defense}}</td>
+                </tr>
+
+                <tr>
+                    <th>Special Attack</th>
+                    <td>{{spAttack}}</td>
+                </tr>
+                <tr>
+                    <th>Special Defense</th>
+                    <td>{{spDefense}}</td>
+                </tr>
+                <tr>
+                    <th>Speed</th>
+                    <td>{{speed}}</td>
+                </tr>
+            </table>
+
+            <div class="card__abilities">
+                <h4 class="card__ability">
+                    <span class="card__label">Ability</span>
+                    {{ability1}}
+                </h4>
+                <h4 class="card__ability">
+                    <span class="card__label">Hidden Ability</span>
+                    {{ability2}}
+                </h4>
+            </div>
+        </figcaption>
+    </figure>
+</script>

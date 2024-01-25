@@ -1,0 +1,51 @@
+<div class="col d-flex justify-content-center mt-5">
+    <div class="card" style ="background-color: #f5f5f5; width: 600px">
+        <div class="card-body">
+            <div class="row fontInput">
+                <div id="registered"></div>
+                <div>
+                    <div class="form-group inputLogin">
+                        <span id="icon-user">
+                            <i class="fa-solid fa-user"></i>
+                        </span>
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Entrer un email" onblur="loginController.focusOff('icon-user','icon-user')" onfocus="loginController.focusOn('icon-user','icon-user')">
+                        <div id="valid-email"></div>
+                    </div>
+                    <div class="form-group inputLogin mt-2">
+                        <span id="icon-key">
+                            <i class="fa-solid fa-key"></i>
+                        </span>
+                        <label for="password">Mot de passe</label>
+                        <div class="input-group">
+                            <input type="password" class="form-control" id="password" placeholder="Entrer un mot de passe" onblur="loginController.focusOff('icon-key','icon-key')" onfocus="loginController.focusOn('icon-key','icon-key')">
+                            <button class="btn btn-outline-secondary" type="button" onclick="loginController.togglePasswordVisibility('password', 'toggleIcon')">
+                                <i id="toggleIcon" class="fa-regular fa-eye-slash" style="color: #2c2d30;"></i>
+                            </button>
+                        </div>
+                        <div id="valid-password"></div>
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                        <button id="myBtn" onclick="loginController.getUser()" style="margin-top: 10px" class="btn btn-primary">Se connecter</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="position-fixed top-0 end-0" style="z-index: 11">
+    <div id="session" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-body" id="toast">
+            Votre session a expiré, veuillez vous déconnecter
+        </div>
+    </div>
+</div>
+
+<div class="position-fixed top-0 end-0" style="z-index: 11">
+    <div id="servererror" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-body">
+            Une erreur serveur est survenue... <br> Veuillez nous excuser pour la gêne occasionnée.
+        </div>
+    </div>
+</div>

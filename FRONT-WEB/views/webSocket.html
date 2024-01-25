@@ -1,0 +1,295 @@
+<style>
+    .btn-pokemon {
+        margin: 10px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-align: center;
+        font-weight: bold;
+        position: relative;
+    }
+
+    .btn-pokemon i {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+    }
+
+    .btn-normal {
+        background-color: #A8A878;
+        color: #FFF;
+    }
+
+    .btn-combat {
+        background-color: #C03028;
+        color: #FFF;
+    }
+
+    .btn-vol {
+        background-color: #A890F0;
+        color: #FFF;
+    }
+
+    .btn-poison {
+        background-color: #A040A0;
+        color: #FFF;
+    }
+
+    .btn-sol {
+        background-color: #E0C068;
+        color: #FFF;
+    }
+
+    .btn-roche {
+        background-color: #B8A038;
+        color: #FFF;
+    }
+
+    .btn-insecte {
+        background-color: #A8B820;
+        color: #FFF;
+    }
+
+    .btn-spectre {
+        background-color: #705898;
+        color: #FFF;
+    }
+
+    .btn-acier {
+        background-color: #B8B8D0;
+        color: #FFF;
+    }
+
+    .btn-feu {
+        background-color: #F08030;
+        color: #FFF;
+    }
+
+    .btn-eau {
+        background-color: #6890F0;
+        color: #FFF;
+    }
+
+    .btn-plante {
+        background-color: #78C850;
+        color: #FFF;
+    }
+
+    .btn-electrik {
+        background-color: #F8D030;
+        color: #FFF;
+    }
+
+    .btn-psy {
+        background-color: #F85888;
+        color: #FFF;
+    }
+
+    .btn-glace {
+        background-color: #98D8D8;
+        color: #FFF;
+    }
+
+    .btn-dragon {
+        background-color: #7038F8;
+        color: #FFF;
+    }
+
+    .btn-tenebres {
+        background-color: #705848;
+        color: #FFF;
+    }
+
+    .btn-fee {
+        background-color: #EE99AC;
+        color: #FFF;
+    }
+</style>
+<style>
+    #chrono {
+        font-family: Arial, sans-serif;
+        font-size: 24px;
+        text-align: center;
+        padding: 10px;
+        margin-top: 40%;
+        border: 1px solid #ccc;
+        background-color: rgba(245, 245, 245, 0.5);
+    }
+
+    #chrono:before {
+        content: "";
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #ff0000;
+        margin-right: 5px;
+        animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.2);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+</style>
+<style>
+    #turn {
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        padding: 10px;
+        text-align: center;
+        font-size: large;
+    }
+
+    @media (max-width: 768px) {
+        #turn {
+            font-size: 14px;
+        }
+    }
+</style>
+<style> /* CSS */
+#opponent {
+    display: flex;
+    align-items: center;
+    font-size: large;
+}
+
+#opponent i {
+    margin-right: 5px;
+}
+
+/* Ajoutez des styles responsives avec Bootstrap */
+@media (max-width: 576px) {
+    #opponent {
+        font-size: 14px;
+    }
+}
+</style>
+<div class="container">
+    <div class="position-absolute top-5 end-0">
+        <button type="button" class="btn info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <svg color="white" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-info-circle"
+                 viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+            </svg>
+        </button>
+    </div>
+    <div id="chrono"></div>
+    <div>
+        <p id="turn" class="d-none"></p>
+        <p id="opponent" class="d-none" style="color: white"></p>
+    </div>
+
+
+    <h1 id="result"></h1>
+
+    <p id="display-result" style="color: white"></p>
+
+<!--    <div id="vs"></div>-->
+    <p id="return-lobby"></p>
+
+    <div class="container">
+        <div class="row">
+
+<!--            <div class="col">-->
+<!--                <div class="col">-->
+<!--                    <div id='pokemon-player-1' style="position : fixed; ">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="col">-->
+<!--                <div id='pokemon-player-2' style="position : fixed; ">-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div>-->
+
+
+                <div class="row">
+
+                    <div class="col">
+                        <div style="position : fixed; bottom: 0">
+                            <div id="chose-action-1"></div>
+                            <div id="card-1"></div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div style="position : fixed; bottom: 0">
+                            <div id="chose-action-2"></div>
+                            <div id="card-2"></div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div style="position : fixed; bottom: 0">
+                            <div id="chose-action-3"></div>
+                            <div id="card-3"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title font" id="exampleModalLabel">Informations</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h4 class="mb-2 text-decoration-underline">Types des Pokémons :</h4>
+                <div class="row">
+                    <div class="col-md-3">
+                        <strong>normal :</strong> <i class="fas fa-circle"></i><br>
+                        <strong>combat :</strong> <i class="fas fa-fist-raised"></i><br>
+                        <strong>vol :</strong> <i class="fas fa-feather-alt"></i><br>
+                        <strong>sol :</strong> <i class="fas fa-skull-crossbones"></i><br>
+                        <strong>roche :</strong> <i class="fas fa-mountain"></i><br>
+                        <strong>insecte :</strong> <i class="fas fa-gem"></i><br>
+                        <strong>spectre :</strong> <i class="fas fa-bug"></i><br>
+                    </div>
+                    <div class="col-md-3">
+                        <strong>acier :</strong> <i class="fas fa-ghost"></i><br>
+                        <strong>feu :</strong> <i class="fas fa-shield-alt"></i><br>
+                        <strong>eau :</strong> <i class="fas fa-fire"></i><br>
+                        <strong>plante :</strong> <i class="fas fa-tint"></i><br>
+                        <strong>électrik :</strong> <i class="fas fa-leaf"></i><br>
+                        <strong>psy :</strong> <i class="fas fa-bolt"></i><br>
+                        <strong>glace :</strong> <i class="fas fa-brain"></i><br>
+                    </div>
+                    <div class="col-md-3">
+                        <strong>dragon :</strong> <i class="fas fa-snowflake"></i><br>
+                        <strong>ténèbres :</strong> <i class="fas fa-dragon"></i><br>
+                        <strong>féé :</strong> <i class="fas fa-moon"></i><br>
+                    </div>
+                </div> <br>
+
+                <h4 class="mb-2 text-decoration-underline">Définition des icones :</h4>
+                    <strong>Attaque en premier + taux de chance :</strong> <i class="fa-solid fa-hourglass-start" style="color: #000000;"></i><br>
+                    <strong>Attaque en second :</strong> <i class="fa-solid fa-hourglass-end" style="color: #000000;"></i><br>
+                    <strong>A attaqué :</strong> <i class="fas fa-hand-rock"></i><br>
+                    <strong>HP restant :</strong> <i class="fas fa-heart"></i><br>
+                    <strong>Est mort :</strong> <i class="fas fa-skull"></i><br>
+            </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn navBar info" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
